@@ -8,5 +8,6 @@ Este proyecto implementa una Red Virtual Privada (VPN) utilizando Docker, config
 - Docker Compose 
 
 ### 1. Crear una red privada en Docker
+Se opta por utilizar la direccion 192.168.10.0/24 dado que no se tiene pensado una cantidad grande de hosts
 ```bash
-docker network create --driver bridge --subnet 172.25.0.0/16 --gateway 172.25.0.1 mi_red_privada
+docker network create --driver bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 red_privada

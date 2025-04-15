@@ -34,9 +34,10 @@ kylemanna/openvpn ovpn_genconfig: la imagen y una configuracion (documentacion)
 
 udp http://turipdownfall.duckdns.org : Se utilizo DuckDNS para obtenerun dominio gratuito por medio del protocolo udp.
 
-### 4. 
+### 4. Creacion de certificados
 ```bash
 docker run -v $(pwd)/openvpn-data:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
 ```
+Este comando despliega una terminal en la cual se asigna una contraseña a los certificados 
 ## Referencias
 https://hub.docker.com/r/kylemanna/openvpn

@@ -24,10 +24,14 @@ mkdir openvpn_data
 docker run -v $(pwd)/openvpn-data:/etc/openvpn kylemanna/openvpn ovpn_genconfig -u udp http://turipdownfall.duckdns.org
 ```
 docker run : iniciar un contenedor a partir de una imagen
--v : crear un volumen tipo bind mount, un volumen es un archivo que va a persistir aun que el contenedor se haya eliminado o deje de correr \n /n
+-v : crear un volumen tipo bind mount, un volumen es un archivo que va a persistir aun que el contenedor se haya eliminado o deje de correr
+
 $(pwd)/openvpn-data:/etc/openvpn : Se tiene considerado estar dentro de la carpeta de /Documents ya que pwd da la direccion actual y openvpn-data esta dentro de /Documents pero esta parte del comando enlaza el directorio señalado de la maquina local hacia (:) un directorio en el contenedor, se elije /etc ya que seran en su mayoria configuraciones y certificados
+
 kylemanna/openvpn ovpn_genconfig: la imagen y una configuracion (documentacion)
+
 -u : Se indica que se proveera un link
+
 udp http://turipdownfall.duckdns.org : Se utilizo DuckDNS para obtenerun dominio gratuito por medio del protocolo udp.
 
 ### 4. 

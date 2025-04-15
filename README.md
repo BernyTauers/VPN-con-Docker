@@ -11,3 +11,9 @@ Este proyecto implementa una Red Virtual Privada (VPN) utilizando Docker, config
 Se opta por utilizar la direccion 192.168.10.0/24 dado que esta diseñado para un uso moderado de hosts/contenedores
 ```bash
 docker network create --driver bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 red_privada
+```
+
+### 2. Crear un directorio para guardar los datos de Open Vpn
+```bash
+mkdir openvpn_data
+```

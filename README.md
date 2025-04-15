@@ -39,5 +39,25 @@ udp http://turipdownfall.duckdns.org : Se utilizo DuckDNS para obtenerun dominio
 docker run -v $(pwd)/openvpn-data:/etc/openvpn --rm -it kylemanna/openvpn ovpn_initpki
 ```
 Este comando despliega una terminal en la cual se asigna una contraseña a los certificados 
+
+### 5. Inicializar VPN
+```bash
+docker run -d --name openvpn_primerintento --network red_privada --cap-add=NET_ADMIN -v $(pwd)/openvpn-data:/etc/openvpn -p 1194:1194/udp kylemanna/openvpn
+```
+
+### 6. Crear cliente
+```bash
+docker run -v $(pwd)/openvpn-data:/etc/openvpn --rm -it kylemanna/openvpn easyrsa build-client-full cliente1 nopass
+```
+
+### 7. Asignar archivo .ovpn al cliente
+```bash
+docker run -v $(pwd)/openvpn-data:/etc/openvpn --rm kylemanna/openvpn ovpn_getclient cliente1 > cliente1.ovpn
+```
+Crea el archivo .ovpn que contiene las llaves privadas y certificados necesarios para conectarse al vpn
+
+
+![image](https://github.com/user-attachments/assets/844faa2e-377a-4e19-898c-6469a453ad85)
+
 ## Referencias
 https://hub.docker.com/r/kylemanna/openvpn

@@ -13,7 +13,13 @@ Se opta por utilizar la direccion 192.168.10.0/24 dado que esta diseñado para u
 docker network create --driver bridge --subnet 192.168.10.0/24 --gateway 192.168.10.1 red_privada
 ```
 
-### 2. Crear un directorio para guardar los datos de Open Vpn
+### 2. Crear un directorio de Open Vpn
+Al ser una configuracion manual de open vpn, se deberan de guardar los certificados y archivos de configuracion de vpn en una carpeta.
 ```bash
 mkdir openvpn_data
 ```
+
+
+
+##Referencias
+https://hub.docker.com/r/kylemanna/openvpn
